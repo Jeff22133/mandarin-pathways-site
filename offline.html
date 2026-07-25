@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Offline — Mandarin Pathways</title>
+<style>
+  :root {
+    --background: #faf8f3;
+    --foreground: #1c1917;
+    --muted: #78716c;
+    --accent: #b91c1c;
+    --border: #e7e5e4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #191614;
+      --foreground: #e8e3da;
+      --muted: #a8a29e;
+      --accent: #ff8787;
+      --border: #3a352f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+  }
+  main {
+    max-width: 30rem;
+    width: 100%;
+    text-align: center;
+  }
+  .icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--accent);
+    margin: 0 auto 1.25rem;
+  }
+  h1 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0 0 1rem;
+  }
+  .lang-block + .lang-block {
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .lang-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+  a.retry {
+    display: inline-block;
+    margin-top: 0.25rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.6rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  a.retry:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+  <main>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 20h.01" />
+      <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+      <path d="M5 12.859a10 10 0 0 1 5.17-2.69" />
+      <path d="M19 12.859a10 10 0 0 0-2.007-1.523" />
+      <path d="M2 8.82a15 15 0 0 1 4.177-2.643" />
+      <path d="M22 8.82a15 15 0 0 0-11.288-3.764" />
+      <path d="m2 2 20 20" />
+    </svg>
+
+    <div class="lang-block">
+      <span class="lang-tag">EN</span>
+      <h1>This page hasn't been saved for offline use yet</h1>
+      <p>
+        You're offline right now. Pages you've already opened — and any
+        review, practice, or writing session already in progress — keep
+        working from what's saved on this device. Reconnect and visit
+        Today, Practice, Review, or Settings once to make them available
+        offline going forward.
+      </p>
+      <a class="retry" href="/">Try again</a>
+    </div>
+
+    <div class="lang-block">
+      <span class="lang-tag">ID</span>
+      <h1>Halaman ini belum tersimpan untuk mode offline</h1>
+      <p>
+        Kamu sedang offline. Halaman yang sudah pernah dibuka — serta sesi
+        ulang, latihan, atau menulis yang sedang berjalan — tetap berfungsi
+        dari data yang tersimpan di perangkat ini. Sambungkan kembali lalu
+        buka Hari Ini, Latihan, Ulang, atau Pengaturan sekali agar tersedia
+        secara offline selanjutnya.
+      </p>
+      <a class="retry" href="/">Coba lagi</a>
+    </div>
+  </main>
+</body>
+</html>
