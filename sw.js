@@ -13,7 +13,7 @@
 //
 // Bump CACHE_VERSION on any change to the strategies/precache list below —
 // activate() deletes every cache that doesn't match the current version.
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 
 const SHELL_CACHE = `mp-shell-${CACHE_VERSION}`;
 const ASSET_CACHE = `mp-assets-${CACHE_VERSION}`;
@@ -30,6 +30,11 @@ const PRECACHE_URLS = [
   "/practice/1",
   "/settings",
   "/offline.html",
+  // Now that the study tools require an account, the sign-in page is part
+  // of the offline shell: without it, a signed-out learner opening the
+  // installed PWA with no connection gets bounced to a route the cache
+  // cannot serve, and there is no way back in.
+  "/login",
 ];
 
 self.addEventListener("install", (event) => {
@@ -72,7 +77,7 @@ function isNavigationRequest(request) {
 async function networkFirst(request) {
   try {
     const fresh = await fetch(request);
-    if (fresh && fresh.ok) {
+    if (isStorable(fresh)) {
       const cache = await caches.open(SHELL_CACHE);
       cache.put(request, fresh.clone());
     }
@@ -86,11 +91,20 @@ async function networkFirst(request) {
   }
 }
 
+// `response.ok` spans 200-299, which includes 206 Partial Content — and
+// Cache.put() rejects a 206 outright. Audio elements fetch with a Range
+// header, so every single clip request took that path: the put threw, the
+// asset cache stayed empty of mp3s, and each replay tap re-downloaded the
+// file and failed offline. Only a full 200 is storable.
+function isStorable(response) {
+  return Boolean(response) && response.status === 200;
+}
+
 async function cacheFirst(request) {
   const cached = await caches.match(request);
   if (cached) return cached;
   const fresh = await fetch(request);
-  if (fresh && fresh.ok) {
+  if (isStorable(fresh)) {
     const cache = await caches.open(ASSET_CACHE);
     cache.put(request, fresh.clone());
   }
@@ -102,7 +116,7 @@ async function staleWhileRevalidate(request) {
   const cached = await cache.match(request);
   const networkFetch = fetch(request)
     .then((response) => {
-      if (response && response.ok) cache.put(request, response.clone());
+      if (isStorable(response)) cache.put(request, response.clone());
       return response;
     })
     .catch(() => undefined);
