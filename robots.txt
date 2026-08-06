@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /chardata/
+
+Host: https://mandarinpathways.com
+Sitemap: https://mandarinpathways.com/sitemap.xml
