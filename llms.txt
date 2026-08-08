@@ -1,0 +1,23 @@
+# Mandarin Pathways
+
+> Free Mandarin Chinese reference and self-study app, bilingual English/Indonesian. Animated stroke order for 2,978 HSK characters, complete HSK 1–9 word lists (HSK 3.0) and HSK 1–6 (HSK 2.0) with native audio, pinyin and tone guides, themed vocabulary, and a structured HSK 1 course with FSRS spaced repetition.
+
+All reference pages are free and need no account. Content is original; stroke data comes from Hanzi Writer / Make Me a Hanzi, vocabulary from complete-hsk-vocabulary. The site is not affiliated with Hanban / Chinese Testing International.
+
+## Reference
+
+- [Character stroke order index](https://mandarinpathways.com/char): entry point to 2,978 per-character pages with animated stroke order, components, and example words
+- [HSK word lists](https://mandarinpathways.com/hsk/1): levels 1–6 and 7–9, with audio and Indonesian/English meanings
+- [Pinyin table](https://mandarinpathways.com/pinyin): every syllable, playable
+- [Tones guide](https://mandarinpathways.com/tones): the four tones, tone pairs, and drills
+- [Grammar](https://mandarinpathways.com/grammar) and [radicals](https://mandarinpathways.com/radicals) references
+
+## Guides
+
+- [Blog](https://mandarinpathways.com/blog): stroke order rules, tones, numbers, pinyin, and beginner guides (Indonesian and English)
+- [Les Mandarin per kota](https://mandarinpathways.com/les-mandarin): choosing Mandarin lessons in 17 Indonesian cities — options, price ranges, and what each city's Chinese-language community actually speaks
+- [Culture notes](https://mandarinpathways.com/culture) and [themed vocabulary](https://mandarinpathways.com/themes)
+
+## About
+
+- [About the site](https://mandarinpathways.com/about): author, sourcing, and limitations
