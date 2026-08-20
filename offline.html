@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" /  <!-- The service worker's fallback when a page cannot be fetched. It is
+       not content and there is nothing on it to search for; indexed, it
+       would put "Offline" in results for the site. Hand-written here
+       rather than through GATED_METADATA because this file is served
+       straight out of public/ and never passes through Next. -->
+  <meta name="robots" content="noindex, follow">
+>
 <title>Offline — Mandarin Pathways</title>
 <style>
   :root {
